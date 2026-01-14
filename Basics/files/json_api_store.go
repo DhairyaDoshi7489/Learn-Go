@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 )
 
@@ -49,5 +50,6 @@ func tasksHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/tasks", tasksHandler)
+	fmt.Println("Server starting on port 8080...")
 	http.ListenAndServe(":8080", nil)
 }
